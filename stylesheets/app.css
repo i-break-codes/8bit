@@ -1,0 +1,252 @@
+:root {
+  --brand-color: #50e3c2;
+  --bg-color: #0d0d0d;
+  --primary-color: #fafafa;
+  --text-color: #919191;
+  --primary-border-color: #212121;
+}
+
+::selection {
+  background-color: var(--brand-color);
+  color: var(--primary-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  font: 100 14px 'League Mono';
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--primary-border-color);
+}
+
+.row:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+main,
+header {
+  max-width: 1024px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+header {
+  padding: 60px 20px;
+}
+
+p {
+  line-height: 21px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+p span {
+  color: var(--primary-color);
+  font-weight: 300;
+}
+
+nav {
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav li:last-of-type {
+  margin-right: 0;
+}
+
+nav a:before,
+nav a:after {
+  content: '[';
+  color: transparent;
+  transition: color 500ms ease-in;
+  position: relative;
+}
+
+nav a:after {
+  content: ']';
+}
+
+nav a.active-link,
+nav a.active-link:before,
+nav a.active-link:after,
+nav a:hover:not(.disabled-link):before,
+nav a:hover:not(.disabled-link):after {
+  color: var(--brand-color);
+
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 22px;
+  color: var(--brand-color);
+  padding-bottom: 40px;
+}
+
+.logo svg {
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  margin-right: 10px;
+}
+
+.logo span:nth-of-type(1) {
+  color: var(--primary-color);
+  padding-right: 2px;
+}
+
+.logo span:nth-of-type(2) {
+  font-size: 12px;
+  color: var(--primary-color);
+  position: relative;
+  left: -15px;
+}
+
+main h1 {
+  margin-bottom: 20px;
+}
+
+main h2 {
+  border-bottom: 1px dashed var(--brand-color);
+  display: inline-block;
+  padding-bottom: 2px;
+  margin-top: 40px;
+}
+
+.resource-band h2 {
+  float: left;
+}
+
+.resource-band ul {
+  float: right;
+  margin-top: 40px;
+}
+
+.resource-band ul li {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-left: 25px;
+  color: var(--text-color);
+  position: relative;
+}
+
+.resource-band ul li:after {
+  content: '/';
+  position: absolute;
+  right: -20px;
+}
+
+.resource-band ul li:last-of-type:after {
+  content: '';
+}
+
+.resource-band li a {
+  transition: color 500ms ease-in ;
+}
+
+.active-sub-tab,
+.resource-band li a:hover {
+  color: var(--primary-color);
+}
+
+.resource-windows {
+  margin-top: 40px;
+}
+
+.ico-box {
+  float: left;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .05);
+}
+
+.ico-box svg,
+.ico-box img {
+  display: block;
+  height: 28px;
+}
+
+.description-box {
+  float: left;
+  margin-left: 20px;
+  width: 70%;
+}
+
+.item-box {
+  margin-bottom:120px;
+  border: 1px solid transparent;
+  padding: 10px;
+  transition: border-color 500ms ease-in;
+  border-radius: 5px;
+}
+
+.item-box:hover {
+  border-color: var(--brand-color);
+}
+
+.item-box > a {
+  display: block;
+}
+
+.description-box p {
+  margin-top: 5px;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.resource-apps {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.badge {
+  background-image: url(../images/star.svg);
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-size: 100% auto;
+}
