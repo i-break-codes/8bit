@@ -2,7 +2,7 @@
   --brand-color: #50e3c2;
   --bg-color: #0d0d0d;
   --primary-color: #fafafa;
-  --text-color: #919191;
+  --text-color: #616161;
   --primary-border-color: #212121;
 }
 
@@ -118,6 +118,10 @@ nav a:hover:not(.disabled-link):after {
 
 }
 
+.hide {
+  display: none !important;
+}
+
 .logo {
   text-transform: uppercase;
   font-size: 22px;
@@ -203,10 +207,19 @@ main h2 {
   background-color: rgba(255, 255, 255, .05);
 }
 
-.ico-box svg,
-.ico-box img {
+.ico-book {
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.ico-box img,
+.ico-book img {
   display: block;
-  height: 28px;
+  width: 28px;
+}
+
+.ico-book img {
+  width: 36px;
 }
 
 .description-box {
@@ -216,8 +229,7 @@ main h2 {
 }
 
 .item-box {
-  margin-bottom:120px;
-  border: 1px solid transparent;
+  border: 1px dashed transparent;
   padding: 10px;
   transition: border-color 500ms ease-in;
   border-radius: 5px;
@@ -231,16 +243,22 @@ main h2 {
   display: block;
 }
 
+hr {
+  margin-top: 20px;
+}
+
 .description-box p {
   margin-top: 5px;
-  font-size: 12px;
+  font-size: 11px;
   margin-bottom: 0;
 }
 
-.resource-apps {
+.resource-apps,
+.resource-cloud-apps,
+.resource-books {
   display: grid;
-  grid-column-gap: 30px;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-gap: 20px;
+  grid-template-columns: 50% 50%;
 }
 
 .badge {
@@ -249,4 +267,12 @@ main h2 {
   width: 12px;
   display: inline-block;
   background-size: 100% auto;
+}
+
+.paid-badge {
+  background-color: #eb4d4b;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
 }
