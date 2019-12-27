@@ -72,6 +72,7 @@ header {
 }
 
 header {
+  position: relative;
   padding: 60px 20px;
 }
 
@@ -89,15 +90,15 @@ p span {
 nav {
   text-transform: uppercase;
   margin-top: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 nav li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-nav li:last-of-type {
-  margin-right: 0;
+  padding: 20px 0;
+  font-size: 30px;
 }
 
 nav a:before,
@@ -129,6 +130,47 @@ nav a:hover:not(.disabled-link):after {
   display: none !important;
 }
 
+.hamburger-btn {
+  height: 22px;
+  width: 26px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  top: 65px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: 50% 50%;
+  margin-top: -1px;
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  z-index: 10;
+}
+.hamburger-line-top {
+  top: 0;
+}
+.is-active .hamburger-line-top {
+  transform: rotate(45deg);
+  top: 10px;
+}
+.hamburger-line-middle {
+  top: 8px;
+}
+.is-active .hamburger-line-middle {
+  opacity: 0;
+}
+.hamburger-line-bottom {
+  top: 16px;
+}
+.is-active .hamburger-line-bottom {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
 .intro p {
   font-size: 16px;
   font-weight: 100;
@@ -152,6 +194,9 @@ nav a:hover:not(.disabled-link):after {
   font-size: 22px;
   color: var(--brand-color);
   padding-bottom: 40px;
+  position: relative;
+  float: left;
+  z-index: 100;
 }
 
 .logo svg {
@@ -300,4 +345,78 @@ hr {
   height: 10px;
   width: 10px;
   display: inline-block;
+}
+
+.description-box {
+  width: 80%;
+}
+
+.js-toggle-menu {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.menu {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+}
+
+.waves {
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px,0,0);
+  }
+  100% {
+    transform: translate3d(85px,0,0);
+  }
+}
+
+@media (max-width: 768px) {
+  .resource-apps,
+  .resource-band,
+  .resource-books,
+  .resource-cloud-apps {
+    grid-template-columns: 1fr;
+  }
 }

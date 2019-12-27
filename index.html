@@ -15,16 +15,13 @@
             <span>8</span>bit <span>.codes</span>
           </a>
         </div>
-        <nav>
-          <ul>
-            <li><a href="/" class="active-link">#</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/achievements" class="disabled-link"><s>Achievements</s></a></li>
-            <li><a href="#" class="disabled-link"><s>Blog</s></a></li>
-            <li><a href="/resources">Resources</a></li>
-            <li><a href="/contact" class="disabled-link"><s>Contact</s></a></li>
-          </ul>
-        </nav>
+        <div class="hamburger-btn">
+          <a class="d-btn js-toggle-menu" href="#">
+            <span class="hamburger-line hamburger-line-top"></span>
+            <span class="hamburger-line hamburger-line-middle"></span>
+            <span class="hamburger-line hamburger-line-bottom"></span>
+          </a>
+        </div>
       </div>
     </header>
     <main>
@@ -41,8 +38,50 @@
         <p>
           Frontend tech fascinates me but I also work on Backend tech like NodeJS, RoR & <s title="Not anymore">PHP</s>. In my free time, you'll often find me working on some 
           <a href="/projects"><span>cool projects</span></a> or raging 
-          <a href="https://steamcommunity.com/id/mr_ali3n/" target="_blank"><span>in game</span></a> x_x
+          <a href="https://steamcommunity.com/id/mr_ali3n/" target="_blank"><span>in-game</span></a> x_x
         </p>
       </div>
+
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(80, 227, 194, 0.4)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(80, 227, 194, 0.2)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(80, 227, 194, 0.1)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(80, 227, 194, 0.8)" />
+        </g>
+      </svg>
     </main>
+
+    <div id="menu" class="hide menu">
+      <nav>
+        <ul>
+          <li><a href="/" class="active-link">#</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/achievements" class="disabled-link"><s>Achievements</s></a></li>
+          <li><a href="#" class="disabled-link"><s>Blog</s></a></li>
+          <li><a href="/resources">Resources</a></li>
+          <li><a href="/contact" class="disabled-link"><s>Contact</s></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $('.hamburger-btn').on('click', function(e) {
+        e.preventDefault();
+
+        $(this).toggleClass('is-active');
+        if($(this).hasClass('is-active')) {
+          $('#menu').removeClass('hide')
+          $('body').css('overflow', 'hidden');
+        } else {
+          $('#menu').addClass('hide');
+          $('body').removeAttr('style');
+        }
+      });
+    </script>
   </body>
