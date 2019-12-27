@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono Thin'), local('LeagueMono-Thin'),
+        url('../fonts/LeagueMono-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono Regular'), local('LeagueMono-Regular'),
+        url('../fonts/LeagueMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono Light'), local('LeagueMono-Light'),
+        url('../fonts/LeagueMono-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono SemiBold'), local('LeagueMono-SemiBold'),
+        url('../fonts/LeagueMono-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono ExtraBold'), local('LeagueMono-ExtraBold'),
+        url('../fonts/LeagueMono-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono Medium'), local('LeagueMono-Medium'),
+        url('../fonts/LeagueMono-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono UltraLight'), local('LeagueMono-UltraLight'),
+        url('../fonts/LeagueMono-UltraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Mono';
+    src: local('League Mono Bold'), local('LeagueMono-Bold'),
+        url('../fonts/LeagueMono-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
