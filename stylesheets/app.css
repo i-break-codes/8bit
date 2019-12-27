@@ -24,6 +24,9 @@ body {
   font: 100 14px 'League Mono';
 }
 
+a:visited,
+a:hover,
+a:active,
 a {
   text-decoration: none;
   color: inherit;
@@ -47,7 +50,7 @@ h2 {
 
 h3 {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 100;
 }
 
 hr {
@@ -109,6 +112,10 @@ nav a:after {
   content: ']';
 }
 
+nav a.disabled-link {
+  color: var(--text-color) !important;
+}
+
 nav a.active-link,
 nav a.active-link:before,
 nav a.active-link:after,
@@ -120,6 +127,24 @@ nav a:hover:not(.disabled-link):after {
 
 .hide {
   display: none !important;
+}
+
+.intro p {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 24px;
+}
+
+.intro a {
+  border-bottom: 1px dashed var(--brand-color);
+}
+
+.intro a span {
+  transition: color 500ms ease-in;
+}
+
+.intro a:hover SPAN {
+  color: var(--brand-color);
 }
 
 .logo {
@@ -153,10 +178,10 @@ main h1 {
 }
 
 main h2 {
-  border-bottom: 1px dashed var(--brand-color);
   display: inline-block;
   padding-bottom: 2px;
   margin-top: 40px;
+  text-transform: capitalize;
 }
 
 .resource-band h2 {
@@ -193,7 +218,7 @@ main h2 {
 
 .active-sub-tab,
 .resource-band li a:hover {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .resource-windows {
@@ -249,7 +274,7 @@ hr {
 
 .description-box p {
   margin-top: 5px;
-  font-size: 11px;
+  font-size: 12px;
   margin-bottom: 0;
 }
 
@@ -258,7 +283,7 @@ hr {
 .resource-books {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
 }
 
 .badge {
