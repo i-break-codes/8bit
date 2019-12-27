@@ -261,6 +261,7 @@ main h2 {
 
 .resource-band li a {
   transition: color 500ms ease-in ;
+  font-weight: 400;
 }
 
 .active-sub-tab,
