@@ -6,6 +6,7 @@
   --primary-color: #fff;
   --text-color: #999;
   --primary-border-color: #212121;
+  --not-maintained: #fcf264;
 }
 
 ::selection {
@@ -380,7 +381,8 @@ hr {
   grid-template-columns: 80px auto;
 }
 
-.status-badge {
+.status-badge,
+.status-badge-not {
   color: var(--brand-color) !important;
   text-transform: uppercase;
   font-size: 10px;
@@ -388,6 +390,11 @@ hr {
   padding: 0 5px;
   font-weight: 400;
   display: inline-block;
+}
+
+.status-badge-not {
+  color: var(--not-maintained) !important;
+  border-color: var(--not-maintained);
 }
 
 .view-project-cta {
