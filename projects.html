@@ -25,7 +25,72 @@
       </div>
     </header>
     <main>
-      
+      <div class="intro">
+        <h1>Projects</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, laborum, accusamus repellendus error, quidem voluptatem aspernatur impedit unde deserunt quibusdam dolorem voluptas ea tempore itaque iure asperiores excepturi incidunt. Harum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quibusdam laboriosam soluta illum error libero ipsam quia cupiditate iusto enim, cum est dolor eius architecto, quod consectetur cumque repellendus corporis?</p>
+      </div>
+
+      <div class="projects">
+        <section class="chrome-extensions">
+          <h2>Chrome Extensions</h2>
+
+          <div class="project-box">
+            <div class="project-ico">
+              <img src="images/chrome-extensions/advanced-notepad-chrome-extension.png" alt="">
+            </div>
+            <div class="project-content-wrapper">
+              <h3>Advanced Notepad</h3>
+              <p>Simple Notepad yet filled with rich features. Format text, create multiple notes, autosave, remote backup. Faster than ever.</p>
+
+              <div class="project-info">
+                <div>
+                  <h4>Features</h4>
+                  <ul>
+                    <li>
+                      <span>Quick notes</span>
+                      <p>Handy to quickly save something without the need of creating new notes.</p>
+                    </li>
+                    <li>
+                      <span>Multiple Notes</span>
+                      <p>You can create unlimited notes, each to store something unique.</p>
+                    </li>
+                    <li>
+                      <span>Text Formatting</span>
+                      <p>Create Lists, change Font Size and Format the Text as you need.</p>
+                    </li>
+                    <li>
+                      <span>Instant Autosave</span>
+                      <p>No need to Save the notes. It autosaves on every key stroke.</p>
+                    </li>
+                    <li>
+                      <span>Cloud Backup</span>
+                      <p>Never lose your notes again. You can take backups on the 
+                        Cloud (<a href="https://jsonbin.io" target="_blank">using <span>JSONBin.io</span></a>). You can restore these notes 
+                        at any time on a different machine</p>
+                    </li>
+                  </ul>
+                  <div class="read-more">
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+                <div>
+                  <h4>Other Info</h4>
+                  <ul>
+                    <li><p><span>Released On</span> 7/9/17</p></li>
+                    <li><p><span>Active Users</span> 10,000+</p></li>
+                    <li><p><span>Max Active Users</span> 12,000+</p></li>
+                    <li><p><span>Open Source</span> No</p></li>
+                    <li><p><span>Status</span> <span class="status-badge">Maintained Actively</span></p></li>
+                  </ul>
+                  <a href="https://chrome.google.com/webstore/detail/advanced-notepad/lfjjkejjcighooiohaacdhlgpbfoldca?hl=en" target="_blank" class="view-project-cta">View Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
     </main>
     <div id="menu" class="hide menu">
       <nav>
@@ -52,6 +117,14 @@
           $('#menu').addClass('hide');
           $('body').removeAttr('style');
         }
+      });
+
+      $('.read-more a').on('click', function(e) {
+        e.preventDefault();
+        var wrapper = $(this).parents('.project-info');
+
+        wrapper.toggleClass('expanded');
+        wrapper.hasClass('expanded') ? $(this).text('Read Less') : $(this).text('Read More');
       });
     </script>
   </body>
