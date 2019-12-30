@@ -545,7 +545,7 @@ hr {
 }
 
 .socials {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .socials a {
@@ -556,18 +556,13 @@ hr {
   filter: grayscale(0%);
 }
 
-.socials h2 {
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-
 .socials li {
   display: inline-block;
   margin-right: 20px;
 }
 
 .socials img {
-  width: 24px;
+  width: 22px;
   filter: grayscale(100%);
   transition: filter 300ms ease-in;
 }
