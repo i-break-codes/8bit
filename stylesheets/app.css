@@ -189,7 +189,7 @@ nav a:hover:not(.disabled-link):after {
   transition: color 500ms ease-in;
 }
 
-.intro a:hover SPAN {
+.intro a:hover span {
   color: var(--brand-color);
 }
 
@@ -515,6 +515,33 @@ hr {
     background-color: var(--bg-color);
     display: block;
   }
+}
+
+.achievement-list {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.achievement-list li {
+  list-style-type: disc;
+  color: var(--text-color);
+  line-height: 21px;
+  margin-bottom: 20px;
+}
+
+.achievement-list span,
+.achievement-list a {
+  color: var(--primary-color);
+  font-weight: 300;
+}
+
+.achievement-list a {
+  border-bottom: 1px dashed var(--brand-color);
+  transition: color 500ms ease-in;
+}
+
+.achievement-list a:hover {
+  color: var(--brand-color);
 }
 
 @media (max-width: 768px) {
