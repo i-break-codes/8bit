@@ -7,6 +7,7 @@
   --text-color: #999;
   --primary-border-color: #212121;
   --not-maintained: #fcf264;
+  --special: #56a7ee;
 }
 
 ::selection {
@@ -382,7 +383,8 @@ hr {
 }
 
 .status-badge,
-.status-badge-not {
+.status-badge-not,
+.status-badge-sold {
   color: var(--brand-color) !important;
   text-transform: uppercase;
   font-size: 10px;
@@ -395,6 +397,11 @@ hr {
 .status-badge-not {
   color: var(--not-maintained) !important;
   border-color: var(--not-maintained);
+}
+
+.status-badge-sold {
+  color: var(--special) !important;
+  border-color: var(--special);
 }
 
 .view-project-cta {
@@ -451,6 +458,10 @@ hr {
 
 .project-info span {
   color: var(--primary-color);
+}
+
+.projects hr {
+  margin: 60px 0 40px 0;
 }
 
 .read-more {
