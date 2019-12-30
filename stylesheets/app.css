@@ -452,7 +452,7 @@ hr {
 
 .project-info > div {
   position: relative;
-  max-height: 280px;
+  max-height: 275px;
   overflow: hidden;
 }
 
@@ -544,6 +544,34 @@ hr {
   color: var(--brand-color);
 }
 
+.socials {
+  margin-top: 30px;
+}
+
+.socials a {
+  border-bottom: 0;
+}
+
+.socials a:hover img {
+  filter: grayscale(0%);
+}
+
+.socials h2 {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.socials li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.socials img {
+  width: 24px;
+  filter: grayscale(100%);
+  transition: filter 300ms ease-in;
+}
+
 @media (max-width: 768px) {
   .resource-apps,
   .resource-band,
@@ -580,3 +608,4 @@ hr {
     margin-top: 60px;
   }
 }
+
