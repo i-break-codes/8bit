@@ -500,3 +500,40 @@ hr {
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+  .resource-apps,
+  .resource-band,
+  .resource-books,
+  .resource-cloud-apps {
+    grid-template-columns: 1fr;
+  }
+
+  .description-box {
+    width: 75%;
+  }
+
+  .project-info {
+    grid-template-columns: auto;
+  }
+
+  .read-more a {
+    width: 100%;
+    background-color: var(--bg-color);
+    display: block;
+  }
+}
+
+@media (max-width: 512px) {
+  .project-box {
+    grid-template-columns: auto;
+  }
+
+  .project-box img {
+    width: 80px;
+  }
+
+  .project-info > div:last-child {
+    margin-top: 60px;
+  }
+}
