@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="57px" viewBox="0 0 38 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>figma</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="figma">
+            <path d="M19,28.5 C19,23.2532949 23.2532949,19 28.5,19 C33.7467051,19 38,23.2532949 38,28.5 C38,33.7467051 33.7467051,38 28.5,38 C23.2532949,38 19,33.7467051 19,28.5 L19,28.5 Z" id="Shape" fill="#1ABCFE"></path>
+            <path d="M0,47.5 C-6.42536064e-16,42.2532949 4.25329488,38 9.5,38 L19,38 L19,47.5 C19,52.7467051 14.7467051,57 9.5,57 C4.25329488,57 6.42536064e-16,52.7467051 0,47.5 L0,47.5 Z" id="Shape" fill="#0ACF83"></path>
+            <path d="M19,0 L19,19 L28.5,19 C33.7467051,19 38,14.7467051 38,9.5 C38,4.25329488 33.7467051,3.21268032e-16 28.5,0 L19,0 L19,0 Z" id="Shape" fill="#FF7262"></path>
+            <path d="M0,9.5 C6.42536064e-16,14.7467051 4.25329488,19 9.5,19 L19,19 L19,0 L9.5,0 C4.25329488,-3.21268032e-16 6.42536064e-16,4.25329488 0,9.5 L0,9.5 Z" id="Shape" fill="#F24E1E"></path>
+            <path d="M0,28.5 C6.42536064e-16,33.7467051 4.25329488,38 9.5,38 L19,38 L19,19 L9.5,19 C4.25329488,19 6.42536064e-16,23.2532949 0,28.5 L0,28.5 Z" id="Shape" fill="#A259FF"></path>
+        </g>
+    </g>
+</svg>

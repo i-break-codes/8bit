@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="120px" viewBox="0 0 90 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>avocode</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="avocode" fill="#00BC87">
+            <g id="Group">
+                <path d="M45,0 C22,0 0,42.5 0,75 C0,99.9 20.1,120 45,120 C69.9,120 90,99.9 90,75 C90,42.5 68,0 45,0 L45,0 Z M45,97.5 C32.6,97.5 22.5,87.4 22.5,75 C22.5,58.3 33.9,37.5 45,37.5 C56.1,37.5 67.5,58.3 67.5,75 C67.5,87.4 57.4,97.5 45,97.5 L45,97.5 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

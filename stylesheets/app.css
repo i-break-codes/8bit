@@ -298,8 +298,13 @@ main h2 {
   width: 28px;
 }
 
+.ico-box img {
+  height: 28px;
+}
+
 .ico-book img {
   width: 36px;
+  height: auto;
 }
 
 .description-box {
