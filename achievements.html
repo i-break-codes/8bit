@@ -16,7 +16,7 @@
             <span>8</span>bit <span>.codes</span>
           </a>
         </div>
-        <div class="hamburger-btn">
+        <div class="hamburger-btn" id="hamburger-btn">
           <a class="d-btn js-toggle-menu" href="#">
             <span class="hamburger-line hamburger-line-top"></span>
             <span class="hamburger-line hamburger-line-middle"></span>
@@ -53,26 +53,11 @@
           <li><a href="/">#</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="/achievements" class="active-link">Achievements</a></li>
-          <li><a href="#" class="disabled-link"><s>Blog</s></a></li>
           <li><a href="/resources">Resources</a></li>
           <li><a href="/contact" class="disabled-link"><s>Contact</s></a></li>
         </ul>
       </nav>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-      $('.hamburger-btn').on('click', function(e) {
-        e.preventDefault();
-
-        $(this).toggleClass('is-active');
-        if($(this).hasClass('is-active')) {
-          $('#menu').removeClass('hide')
-          $('body').css('overflow', 'hidden');
-        } else {
-          $('#menu').addClass('hide');
-          $('body').removeAttr('style');
-        }
-      });
-    </script>
+    <script src="javascripts/app.js"></script>
   </body>
