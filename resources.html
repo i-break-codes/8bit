@@ -41,7 +41,7 @@
           <h2>Terminals</h2>
 
           <ul>
-            <li><a href="#" class="active-sub-tab">Apps</a></li>
+            <li class="active-sub-tab"><a href="#">Apps</a></li>
           </ul>
         </div>
 
@@ -84,7 +84,7 @@
         <div class="row">
           <h2>Code Editors</h2>
           <ul>
-            <li data-trigger="apps"><a href="#" class="active-sub-tab">Apps</a></li>
+            <li data-trigger="apps"  class="active-sub-tab"><a href="#">Apps</a></li>
             <li data-trigger="cloud-apps"><a href="#">Cloud Apps</a></li>
           </ul>
         </div>
@@ -199,7 +199,7 @@
           <h2>Frontend</h2>
 
           <ul>
-            <li data-trigger="apps"><a href="#" class="active-sub-tab">Apps</a></li>
+            <li data-trigger="apps" class="active-sub-tab"><a href="#">Apps</a></li>
             <li data-trigger="cloud-apps"><a href="#">Cloud Apps</a></li>
             <li data-trigger="books"><a href="#">Books</a></li>
             <li data-trigger="libraries"><a href="#">Libraries</a></li>
@@ -372,7 +372,7 @@
           <h2>Design</h2>
 
           <ul>
-            <li data-trigger="apps"><a href="#" class="active-sub-tab">Apps</a></li>
+            <li data-trigger="apps" class="active-sub-tab"><a href="#">Apps</a></li>
             <li data-trigger="cloud-apps"><a href="#">Cloud Apps</a></li>
           </ul>
         </div>
@@ -511,7 +511,7 @@
         <div class="row">
           <h2>Others</h2>
           <ul>
-            <li><a href="#" class="active-sub-tab">Apps</a></li>
+            <li class="active-sub-tab"><a href="#">Apps</a></li>
           </ul>
         </div>
 
@@ -590,20 +590,5 @@
     </div>
 
     <script src="javascripts/app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-      $('[data-trigger]').on('click', function(e) {
-        e.preventDefault();
-
-        var el = $(this),
-            wrapper = el.parents('.resource-band');
-
-            el.siblings().find('a').removeClass('active-sub-tab');
-            el.find('a').addClass('active-sub-tab');
-
-            wrapper.find('[data-target]').addClass('hide');
-            wrapper.find('[data-target="' + el.data('trigger') + '"]').removeClass('hide');
-      });
-    </script>
   </body>
 </html>
