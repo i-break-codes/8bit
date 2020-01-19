@@ -25,7 +25,9 @@
 body {
   background-color: var(--bg-color);
   color: var(--primary-color);
-  font: 100 14px 'League Mono';
+  font: 300 14px 'League Mono';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a:visited,
@@ -701,6 +703,28 @@ hr {
   margin-bottom: 60px;
 }
 
+.pskills-block ul {
+  margin-top: 20px;
+}
+
+.pskills-block li {
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid var(--text-color);
+  border-radius: 3px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  transition: all 200ms ease-in;
+  cursor: default;
+}
+
+.pskills-block li:hover {
+  color: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
 .edu-block h4 {
   margin-top: 30px;
   font-weight: 400;
@@ -736,7 +760,7 @@ hr {
   filter: grayscale(100%);
   width: 40px;
   max-height: 40px;
-  transition: filter 300ms ease-in;
+  transition: filter 200ms ease-in;
 }
 
 .stack-block li:hover img {
