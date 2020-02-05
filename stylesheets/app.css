@@ -189,7 +189,7 @@ nav a:hover:not(.disabled-link):after {
 
 .intro p {
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 200;
   line-height: 24px;
 }
 
@@ -580,6 +580,18 @@ hr {
   color: var(--text-color);
 }
 
+.resume p a,
+.resume li a {
+  border-bottom: 1px dashed var(--brand-color);
+  color: var(--primary-color);
+  transition: color 500ms ease-in;
+}
+
+.resume p a:hover,
+.resume li a:hover {
+  color: var(--brand-color);
+}
+
 .resume h1,
 .resume h2,
 .resume h3,
@@ -777,6 +789,19 @@ hr {
   .resource-books,
   .resource-cloud-apps {
     grid-template-columns: 1fr;
+  }
+
+  .cv-mainframe {
+    display: block;
+  }
+
+  .cv-mainframe > div:last-of-type {
+    padding-left: 0;
+  }
+
+  .cv-mainframe > div {
+    width: 100%;
+    flex-grow: unset;
   }
 
   .description-box {
