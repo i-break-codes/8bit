@@ -839,20 +839,6 @@ hr {
     background-color: var(--bg-color);
     display: block;
   }
-}
-
-@media (max-width: 512px) {
-  .project-box {
-    grid-template-columns: auto;
-  }
-
-  .project-box img {
-    width: 80px;
-  }
-
-  .project-info > div:last-child {
-    margin-top: 60px;
-  }
 
   .cv-intro > ul > li {
     flex-grow: 1;
@@ -875,6 +861,20 @@ hr {
 
   .cv-mainframe {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 512px) {
+  .project-box {
+    grid-template-columns: auto;
+  }
+
+  .project-box img {
+    width: 80px;
+  }
+
+  .project-info > div:last-child {
+    margin-top: 60px;
   }
 }
 

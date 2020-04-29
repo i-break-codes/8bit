@@ -1,8 +1,26 @@
 var App = function() {
   function init() {
+    registerCacheWorker();
     readMore();
     toggleMenu();
     toggleTabs();
+  }
+
+  function registerCacheWorker() {
+    if('serviceWorker' in navigator) {
+      console.log('Service worker support found!');
+
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/cache-worker.js', {
+            scope: '/'
+          })
+          .then(reg => {
+            console.log('Service worker registered');
+          })
+          .catch(err => console.error(`Error in service worker: ${err}`));
+      });
+    }
   }
 
   function readMore() {
