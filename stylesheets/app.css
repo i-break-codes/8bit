@@ -821,7 +821,8 @@ hr {
   .resource-apps,
   .resource-band,
   .resource-books,
-  .resource-cloud-apps {
+  .resource-cloud-apps,
+  .resource-libraries {
     grid-template-columns: 1fr;
   }
 
@@ -851,6 +852,29 @@ hr {
 
   .project-info > div:last-child {
     margin-top: 60px;
+  }
+
+  .cv-intro > ul > li {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .cv-intro ul ul {
+    border-left: 0;
+  }
+
+  .cv-intro li li {
+    padding-left: 0;
+  }
+
+  .cv-intro h4 {
+    float: none;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .cv-mainframe {
+    margin-top: 30px;
   }
 }
 
