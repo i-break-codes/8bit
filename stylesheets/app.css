@@ -127,6 +127,7 @@ nav a:after {
   color: transparent;
   transition: color 500ms ease-in;
   position: relative;
+  top: -1px;
 }
 
 nav a:after {
@@ -152,7 +153,173 @@ nav a:hover:not(.disabled-link):after {
   position: absolute;
   right: 20px;
   cursor: pointer;
-  top: 65px;
+  top: 66px;
+}
+
+.logo {
+  font-size: 30px;
+  position: relative;
+  text-transform: uppercase;
+  padding-bottom: 40px;
+  position: relative;
+  float: left;
+  z-index: 100;
+  top: -4px;
+  color: var(--primary-color);
+}
+
+.logo:before,
+.logo:after {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  top: 0;
+  pointer-events: none;
+}
+
+.logo:after {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+.logo:before {
+  left: -2px;
+  text-shadow: 1px 0 blue;
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(20px, 9999px, 90px, 0);
+  }
+  5% {
+    clip: rect(65px, 9999px, 37px, 0);
+  }
+  10% {
+    clip: rect(69px, 9999px, 27px, 0);
+  }
+  15% {
+    clip: rect(99px, 9999px, 46px, 0);
+  }
+  20% {
+    clip: rect(89px, 9999px, 84px, 0);
+  }
+  25% {
+    clip: rect(64px, 9999px, 33px, 0);
+  }
+  30% {
+    clip: rect(79px, 9999px, 42px, 0);
+  }
+  35% {
+    clip: rect(4px, 9999px, 91px, 0);
+  }
+  40% {
+    clip: rect(64px, 9999px, 82px, 0);
+  }
+  45% {
+    clip: rect(1px, 9999px, 40px, 0);
+  }
+  50% {
+    clip: rect(4px, 9999px, 99px, 0);
+  }
+  55% {
+    clip: rect(44px, 9999px, 68px, 0);
+  }
+  60% {
+    clip: rect(22px, 9999px, 72px, 0);
+  }
+  65% {
+    clip: rect(10px, 9999px, 21px, 0);
+  }
+  70% {
+    clip: rect(59px, 9999px, 88px, 0);
+  }
+  75% {
+    clip: rect(24px, 9999px, 86px, 0);
+  }
+  80% {
+    clip: rect(81px, 9999px, 41px, 0);
+  }
+  85% {
+    clip: rect(41px, 9999px, 33px, 0);
+  }
+  90% {
+    clip: rect(4px, 9999px, 83px, 0);
+  }
+  95% {
+    clip: rect(30px, 9999px, 89px, 0);
+  }
+  100% {
+    clip: rect(19px, 9999px, 95px, 0);
+  }
+}
+
+@keyframes noise-anim-2 {
+  0% {
+    clip: rect(48px, 9999px, 48px, 0);
+  }
+  5% {
+    clip: rect(89px, 9999px, 50px, 0);
+  }
+  10% {
+    clip: rect(45px, 9999px, 6px, 0);
+  }
+  15% {
+    clip: rect(5px, 9999px, 91px, 0);
+  }
+  20% {
+    clip: rect(87px, 9999px, 67px, 0);
+  }
+  25% {
+    clip: rect(31px, 9999px, 8px, 0);
+  }
+  30% {
+    clip: rect(68px, 9999px, 78px, 0);
+  }
+  35% {
+    clip: rect(98px, 9999px, 2px, 0);
+  }
+  40% {
+    clip: rect(19px, 9999px, 79px, 0);
+  }
+  45% {
+    clip: rect(53px, 9999px, 81px, 0);
+  }
+  50% {
+    clip: rect(35px, 9999px, 86px, 0);
+  }
+  55% {
+    clip: rect(31px, 9999px, 22px, 0);
+  }
+  60% {
+    clip: rect(65px, 9999px, 14px, 0);
+  }
+  65% {
+    clip: rect(53px, 9999px, 49px, 0);
+  }
+  70% {
+    clip: rect(98px, 9999px, 23px, 0);
+  }
+  75% {
+    clip: rect(63px, 9999px, 9px, 0);
+  }
+  80% {
+    clip: rect(33px, 9999px, 91px, 0);
+  }
+  85% {
+    clip: rect(18px, 9999px, 25px, 0);
+  }
+  90% {
+    clip: rect(14px, 9999px, 80px, 0);
+  }
+  95% {
+    clip: rect(57px, 9999px, 63px, 0);
+  }
+  100% {
+    clip: rect(85px, 9999px, 95px, 0);
+  }
 }
 
 .hamburger-line {
@@ -203,35 +370,6 @@ nav a:hover:not(.disabled-link):after {
 
 .intro a:hover span {
   color: var(--brand-color);
-}
-
-.logo {
-  text-transform: uppercase;
-  font-size: 22px;
-  color: var(--brand-color);
-  padding-bottom: 40px;
-  position: relative;
-  float: left;
-  z-index: 100;
-}
-
-.logo svg {
-  vertical-align: middle;
-  position: relative;
-  top: -2px;
-  margin-right: 10px;
-}
-
-.logo span:nth-of-type(1) {
-  color: var(--primary-color);
-  padding-right: 2px;
-}
-
-.logo span:nth-of-type(2) {
-  font-size: 12px;
-  color: var(--primary-color);
-  position: relative;
-  left: -15px;
 }
 
 main h1 {
@@ -566,7 +704,7 @@ hr {
   color: var(--bg-color) !important;
   font-weight: 500;
   border-radius: 3px;
-  padding: 4px 10px;
+  padding: 5px 10px;
   font-size: 12px;
   float: right;
   margin-right: 60px;
@@ -893,4 +1031,3 @@ hr {
     margin-top: 60px;
   }
 }
-
