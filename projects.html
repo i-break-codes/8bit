@@ -8,14 +8,21 @@
     <title>Projects | 8bit.codes</title>
     <link rel="icon" type="image/png" href="images/favico.png" />
     <link rel="stylesheet" href="stylesheets/app.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166017740-2"></script>
+    <script>
+      if(location.host === '8bit.codes') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-166017740-2');
+      }
+    </script>
   </head>
   <body>
     <header>
       <div class="row">
-        <div class="logo">
-          <a href="/">
-            <span>8</span>bit <span>.codes</span>
-          </a>
+        <div class="logo" data-text="8BIT">
+          <a href="/">8BIT</a>
         </div>
         <a href="/resume" class="hire-me-btn">Résumé</a>
         <div class="hamburger-btn" id="hamburger-btn">
@@ -30,14 +37,8 @@
     <main>
       <section class="intro">
         <h1>Projects</h1>
-        <p>I've developed a variety of Projects. From Single Page Apps(SPA), CMS Dashboards, Chrome Extensions etc. I 
-          often contribue to <a href="https://github.com/i-break-codes" target="_blank"><span>Open Source Projects</span></a>. 
-          I've developed various Tools/Apps, like  <a href="https://jsonbin.io"><span>JSONBin.io</span></a> which serves millions of requests
-          a week and serves over <span>15,000 registered users</span> and millions of end users.
-        </p>
-        <p>
-          Intention to develop these apps is to learn some new tech, build something helpful to make Developers
-          work easier or build some Sandbox apps to experiment around with various tech.</p>
+        <p>I've developed a variety of Projects. From Single Page Apps(SPA), CMS Dashboards, Chrome Extensions, etc. I often contribute to <a href="https://github.com/i-break-codes" target="_blank"><span>Open Source Projects</span></a>. I've developed various Tools/Apps, like <a href="https://jsonbin.io"><span>JSONBin.io</span></a>, which serves millions of requests a week and serves over 20,000 registered users and millions of end-users.</p>
+        <p>Intention to develop these apps is to learn some new tech, build something helpful to make Developers work more accessible, or create some Sandbox apps to experiment around with various tech.</p>
       </section>
 
       <hr>
@@ -110,9 +111,8 @@
             </div>
             <div class="project-content-wrapper">
               <h3>JSONBin.io</h3>
-              <p>JSONbin.io is a free JSON storage and JSON hosting service. It's ideal for small 
-                scale web apps, website and mobile apps or mocking requests. There are over <span>13,000</span> 
-               registered users and serves over <span>1.8 million</span> unique end users with over <span>18 million</span> 
+              <p>JSONbin.io is a free JSON storage and JSON hosting service. It's ideal for small
+                scale web apps, website and mobile apps or mocking requests. There are over <span>13,000</span> registered users and serves over <span>1.8 million</span> unique end users with over <span>18 million</span>
               requests a month.</p>
 
               <div class="project-info">
@@ -157,8 +157,7 @@
                     <li>
                       <span>Version Control</span>
                       <p>
-                        Every time a record is updated, a new version is created, thus ensures that you will never lose your old data which later can be 
-                        reverted to or can be useful as a reference.
+                        Every time a record is updated, a new version is created, thus ensures that you will never lose your old data which later can be reverted to or can be useful as a reference.
                       </p>
                     </li>
                     <li>
@@ -196,7 +195,7 @@
             <div class="project-content-wrapper">
               <h3>ScrumBoard</h3>
               <p>
-                ScrumBoard SPA powered by JavaScript. Create, Read, Update & Delete the tasks. Drag Drop and Switch Lanes 
+                ScrumBoard SPA powered by JavaScript. Create, Read, Update & Delete the tasks. Drag Drop and Switch Lanes
                 to update the Status of the task. Add aditional information with each card, stores all the data locally.
               </p>
 
@@ -219,6 +218,9 @@
                       </p>
                     </li>
                   </ul>
+                  <div class="read-more">
+                    <a href="#">Read More</a>
+                  </div>
                 </div>
                 <div>
                   <h4>Other Info</h4>
@@ -269,6 +271,9 @@
                       </p>
                     </li>
                   </ul>
+                  <div class="read-more">
+                    <a href="#">Read More</a>
+                  </div>
                 </div>
                 <div>
                   <h4>Other Info</h4>
@@ -294,7 +299,7 @@
             <div class="project-content-wrapper">
               <h3>OPCache GUI</h3>
               <p>
-                This is one of the Open Source Project I had worked upon a few years back. I 
+                This is one of the Open Source Project I had worked upon a few years back. I
                 worked on the UI & UX. From Designing the OPCache Dashboard to Developing the Frontend
                 for the same. No frameworks like Bootstrap or Preprocessors like SASS were used.
               </p>
@@ -314,11 +319,14 @@
                       <span>Simple UI & UX</span>
                       <p>
                         I tried to keep the Design minimal and Flat. Confirmation modals were also replaced by
-                        smart buttons which on click changes into confirmation buttons rather than showing up a 
+                        smart buttons which on click changes into confirmation buttons rather than showing up a
                         confirmation modal.
                       </p>
                     </li>
                   </ul>
+                  <div class="read-more">
+                    <a href="#">Read More</a>
+                  </div>
                 </div>
                 <div>
                   <h4>Other Info</h4>
@@ -370,7 +378,7 @@
                     <li>
                       <span>Cloud Backup</span>
                       <p>Never lose your notes again. You can take backups on the 
-                        Cloud (<a href="https://jsonbin.io" target="_blank">using <span>JSONBin.io</span></a>). You can restore these notes 
+                        Cloud (<a href="https://jsonbin.io" target="_blank">using <span>JSONBin.io</span></a>). You can restore these notes
                         at any time on a different machine</p>
                     </li>
                   </ul>
@@ -425,8 +433,8 @@
                     </li>
                     <li>
                       <span>Cloud Backup</span>
-                      <p>Never lose your notes again. You can take backups on the 
-                        Cloud (<a href="https://jsonbin.io" target="_blank">using <span>JSONBin.io</span></a>). You can restore these notes 
+                      <p>Never lose your notes again. You can take backups on the
+                        Cloud (<a href="https://jsonbin.io" target="_blank">using <span>JSONBin.io</span></a>). You can restore these notes
                         at any time on a different machine</p>
                     </li>
                     <li>
@@ -486,6 +494,9 @@
                         on every change, it tries to search for new emails with the need of refreshing the page.</p>
                     </li>
                   </ul>
+                  <div class="read-more">
+                    <a href="#">Read More</a>
+                  </div>
                 </div>
                 <div>
                   <h4>Other Info</h4>
