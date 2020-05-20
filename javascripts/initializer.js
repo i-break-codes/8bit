@@ -7,7 +7,7 @@ var Initializer = function() {
     if(localStorage.theme) {
       // change button icon
       window.addEventListener('load', function() {
-        document.getElementById('switch-theme').setAttribute('data-theme', 'dark');
+        document.getElementById('switch-theme').setAttribute('data-theme-enabled', 'light');
       });
 
       //append styles
