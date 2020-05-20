@@ -8,8 +8,6 @@ var App = function() {
 
   function registerCacheWorker() {
     if('serviceWorker' in navigator) {
-      console.log('Service worker support found!');
-
       window.addEventListener('load', () => {
         navigator.serviceWorker
           .register('/cache-worker.js', {
