@@ -9,6 +9,16 @@
     <title>Achievements | 8bit.codes</title>
     <link rel="icon" type="image/png" href="images/favico.png" />
     <link rel="stylesheet" href="stylesheets/app.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166017740-2"></script>
+    <script>
+      if(location.host === '8bit.codes') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-166017740-2');
+      }
+    </script>
+     <script src="javascripts/initializer.js"></script>
   </head>
   <body>
     <header>
@@ -54,8 +64,10 @@
           <li><a href="/achievements" class="active-link">Achievements</a></li>
           <li><a href="/resources">Resources</a></li>
           <li><a href="/photography">Photography</a></li>
-          <li><a href="/contact" class="disabled-link"><s>Contact</s></a></li>
         </ul>
+        <div class="switch-mode">
+          <button data-theme-enabled="dark" id="switch-theme"></button>
+        </div>
       </nav>
     </div>
 
