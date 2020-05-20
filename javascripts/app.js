@@ -4,6 +4,26 @@ var App = function() {
     readMore();
     toggleMenu();
     toggleTabs();
+    toggleTheme();
+  }
+
+  function toggleTheme() {
+    var switchTheme = document.getElementById('switch-theme');
+    switchTheme.addEventListener('click', function() {
+      if(localStorage.theme) {
+        var checkStylesExists = document.querySelector('[data-theme]')
+        if(checkStylesExists) {
+          checkStylesExists.remove();
+        }
+        localStorage.removeItem('theme');
+        switchTheme.setAttribute('data-theme-enabled', 'dark');
+      } else {
+        switchTheme.setAttribute('data-theme-enabled', 'light');
+        localStorage.setItem('theme', true);
+      }
+
+      Initializer.applyTheme();
+    });
   }
 
   function registerCacheWorker() {
