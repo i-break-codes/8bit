@@ -12,6 +12,7 @@
   overflow: hidden;
   backface-visibility: hidden;
   position: relative;
+  padding: 10px;
 }
 
 .photography-grid div:after {
