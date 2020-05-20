@@ -11,6 +11,17 @@
 .photography-grid div {
   overflow: hidden;
   backface-visibility: hidden;
+  position: relative;
+}
+
+.photography-grid div:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 .photography-grid img {
@@ -20,7 +31,7 @@
   transition: all 500ms ease-in;
 }
 
-.photography-grid img:hover {
+.photography-grid div:hover img {
   filter: grayscale(0);
   transform: scale(1.1);
 }
@@ -54,27 +65,14 @@
   padding: 20px;
 }
 
-@media (max-width: 1024px) {
-  .photography-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(auto, auto);
-  }
-
-  .span-2 {
-    grid-column-end: span 1;
-    grid-row-end: span 1;
-  }
-
-  .span-2-v-3 {
-    grid-column-end: span 2;
-    grid-row-end: span 3;
-  }
-}
-
 @media (max-width: 512px) {
   .photography-grid {
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: minmax(auto, auto);
+  }
+
+  .photography-grid div {
+    margin-bottom: 20px;
   }
 
   .span-2-v-2 {
