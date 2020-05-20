@@ -8,13 +8,10 @@
   --primary-border-color: #212121;
   --not-maintained: #fcf264;
   --special: #56a7ee;
+  --read-more-start: rgba(13,13,13,.3);
+  --read-more-end: rgba(13,13,13,1);
+  --white-05: rgba(255, 255, 255, .05);
 }
-
-/* :root {
-  --bg-color: #eee;
-  --text-color: #313131;
-  --primary-color: #121212;
-} */
 
 ::selection {
   background-color: var(--brand-color);
@@ -440,7 +437,7 @@ main h2 {
   float: left;
   padding: 12px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .05);
+  background-color: var(--white-05);
 }
 
 .ico-book {
@@ -638,7 +635,7 @@ hr {
   left: 0;
   bottom: 0;
   height: 70px;
-  background: linear-gradient(to bottom, rgba(13,13,13,.3) 0%,rgba(13,13,13,1) 100%);
+  background: linear-gradient(to bottom, var(--read-more-start) 0%, var(--read-more-end) 100%);
 }
 
 .read-more a {
@@ -946,6 +943,32 @@ hr {
 
 .stack-block p {
   margin-top: 10px;
+}
+
+.switch-mode {
+  border-top: 1px solid var(--primary-border-color);
+  padding-top: 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.switch-mode button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-size: 28px;
+}
+
+.switch-mode button[data-theme-enabled=light] {
+  background-image: url(../images/moon.svg);
+}
+
+.switch-mode button[data-theme-enabled=dark] {
+  background-image: url(../images/light.svg);
 }
 
 @media (max-width: 768px) {

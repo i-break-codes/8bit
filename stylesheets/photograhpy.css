@@ -13,6 +13,7 @@
   backface-visibility: hidden;
   position: relative;
   margin: 10px;
+  border: 10px solid var(--primary-border-color);
 }
 
 .photography-grid div:after {
