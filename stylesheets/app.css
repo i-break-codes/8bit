@@ -10,6 +10,12 @@
   --special: #56a7ee;
 }
 
+/* :root {
+  --bg-color: #eee;
+  --text-color: #313131;
+  --primary-color: #121212;
+} */
+
 ::selection {
   background-color: var(--brand-color);
   color: var(--primary-color);
@@ -168,8 +174,8 @@ nav a:hover:not(.disabled-link):after {
   color: var(--primary-color);
 }
 
-.logo:before,
-.logo:after {
+.logo::before,
+.logo::after {
   content: attr(data-text);
   position: absolute;
   overflow: hidden;
@@ -178,13 +184,13 @@ nav a:hover:not(.disabled-link):after {
   pointer-events: none;
 }
 
-.logo:after {
+.logo::after {
   left: 2px;
   text-shadow: -1px 0 red;
-  animation: noise-anim 2s infinite linear alternate-reverse;
+  animation: noise-anim 1s infinite linear alternate-reverse;
 }
 
-.logo:before {
+.logo::before {
   left: -2px;
   text-shadow: 1px 0 blue;
   animation: noise-anim-2 3s infinite linear alternate-reverse;
@@ -326,7 +332,7 @@ nav a:hover:not(.disabled-link):after {
   display: block;
   width: 25px;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--primary-color);
   transform-origin: 50% 50%;
   margin-top: -1px;
   transition: all 200ms ease-in-out;
@@ -692,6 +698,11 @@ hr {
 .socials li {
   display: inline-block;
   margin-right: 20px;
+}
+
+.socials li:last-of-type {
+  position: relative;
+  top: 2px;
 }
 
 .socials img {
