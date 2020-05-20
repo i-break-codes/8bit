@@ -1,4 +1,4 @@
-const cacheVer = '0.5';
+const cacheVer = '0.6';
 const cacheAssets = [
   '/' ,
   '/projects',
@@ -8,6 +8,7 @@ const cacheAssets = [
   '/stylesheets/app.css',
   '/stylesheets/fonts.css',
   '/javascripts/app.js',
+  '/javascripts/photography.js',
 ]
 
 self.addEventListener('install', e => {
