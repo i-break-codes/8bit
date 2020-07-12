@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Up & Running with Deno.js. Learn from setting up the dev environment to consuming the API data.">
+    <title>Getting started with Deno.js - Blog | 8bit.codes</title>
+    <link rel="icon" type="image/png" href="../images/favico.png" />
+    <link rel="stylesheet" href="../stylesheets/app.css">
+    <link rel="stylesheet" href="../stylesheets/prism-duotone-sea.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166017740-2"></script>
+    <script>
+      if(location.host === '8bit.codes') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-166017740-2');
+      }
+    </script>
+    <script src="../javascripts/initializer.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="row">
+        <div class="logo" data-text="8IT">
+          <a href="/">BIT</a>
+        </div>
+        <a href="/resume" class="hire-me-btn">Résumé</a>
+        <div class="hamburger-btn" id="hamburger-btn">
+          <a class="js-toggle-menu" href="#">
+            <span class="hamburger-line hamburger-line-top"></span>
+            <span class="hamburger-line hamburger-line-middle"></span>
+            <span class="hamburger-line hamburger-line-bottom"></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <article>
+        <h1>Getting started with Deno.js</h1>
+        <p>I’ve been spending a lot of time exploring new tech, trying to make out the most of the Lockdown. From Vue & VueX to Service workers & IndexedDB, it has been a great journey so far. For a few days, there has been a lot of buzz in the engineering community around <a href="https://github.com/denoland/deno" target="_blank">Deno</a> (I pronounce it as Dee-no), a secure JavaScript & Typescript runtime developed by Ryan Dahl, who previously developed Node.js back in May 2009.</p>
+        <p>I am working on Node.js for over three years now, and hence, I wanted to explore Deno since it’s very similar to Node and wanted to understand how is it different from Node, and is it any better? At the time of writing this article, Deno announced the 1.0.0 release.</p>
+        <h2>So what is Deno?</h2>
+        <figure>
+          <img data-src="../images/blog/deno-js/deno-js-banner.png" alt="Deno.js Banner">
+          <figcaption>Deno — Secure runtime for JavaScript & Typescript.</figcaption>
+        </figure>
+        <p>Deno is a new runtime for Typescript (and Javascript), a part of it is written in Rust. As Ryan Dahl said in one of his interviews, that Deno acts more like a web browser for command-line scripts. Its security model is that to a browser where websites ask for permission to access the camera, location, etc.</p>
+
+        <blockquote>
+          Deno aims to replace utility scripts that were historically written with Bash or Python.
+        </blockquote>
+
+        <p>Similarly, Deno scripts run in a secure sandbox without access to the operating system, where users can selectively grant access to the files to provide further functionality. Furthermore, it explicitly takes on the role of both runtime and the package manager.</p>
+        <hr>
+        <h2>Features of Deno and how are they different from Node.js</h2>
+        <p>If you’ve worked with Node.js previously, you’ll find Deno quite similar to it but with some significant enhancements around security and the way we import the modules.</p>
+        <p>Here are some of the features I tried out using Deno and I am highlighting some of them below:</p>
+        <ul>
+          <li>Deno is written in Rust as compared to its predecessor, Node.js, which is written in C++.</li>
+          <li>
+            Unlike Node.js, it does not use <span class="ic">npm</span> and instead uses modules that are referenced as URLs or file paths. It also embraces the use of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank" rel="noopener">ES6 Modules</a> over require statements. For example:
+            <br><br>
+            <pre>
+<code class="language-javascript">//The Node.js way
+const package = require('mypackage');
+
+//The Deno 🦕 way
+import package from "https://deno.land/std/SOME_MODULE.ts";</code>
+</pre>
+          </li>
+          <li>Does not use <span class="ic">package.json</span> in its module resolution algorithm.</li>
+          <li>All <strong>async</strong> actions in Deno return a <strong>promise</strong>. Thus Deno provides different APIs than Node.</li>
+          <li>Support for <a href="https://v8.dev/features/top-level-await" target="_blank" rel="noopener">top-level <span class="ic">await</span></a> unlike Node.js where you need to define <span class="ic">async</span> before you can use <span class="ic">await</span>. For example:
+          <br><br>
+          <pre>
+<code class="language-javascript">//The Node.js way
+async () => {
+  let getData = await fetch('URL');
+  ...
+}
+
+//The Deno 🦕 way
+let getData = await fetch('URL');
+...</code></pre>
+          </li>
+          <li>Requires explicit permissions for files, network, and environment access. Think of a file requesting data from an external resource, and you need to pass a flag like <span class="ic">--allow-net</span> to allow the file to fetch the data from an external resource. We will discuss more on this as we write a basic app.</li>
+          <li>It exits if any uncaught errors are encountered. (😨 rip my code, seems like I’ll be spending a lot of time on error handling 😂)</li>
+          <li><strong>Typescript</strong> by <strong>default</strong>. It also eliminates the need for other tools like Babel to compile JavaScript and instead has built-in support.</li>
+          <li>Deno provides a <a href="https://deno.land/std" rel="noopener" target="_blank">standard library</a> that does not have any external dependencies and is reviewed by the Deno core team. This consists of core modules like DateTime, File System handling, HTTP, etc.</li>
+          <li>Lastly, it has built-in support for <a href="https://deno.land/std/testing/" rel="noopener" target="_blank">necessary testing</a>.</li>
+        </ul>
+        <hr>
+        <h2>Up & Running</h2>
+        <p>There are numerous ways using which you can install Deno on your system. I’ll share a few examples here:</p>
+        <h4>Using CURL (for macOS & Linux)</h4>
+<pre>
+<code class="language-bash">curl -fsSL https://deno.land/x/install/install.sh | sh</code>
+</pre>
+
+          <h4>Powershell (for Windows)</h4>
+<pre>
+<code class="language-bash">iwr https://deno.land/x/install/install.ps1 -useb | iex</code>
+</pre>
+          <h4>or you can use Homebrew on macOS</h4>
+<pre>
+<code class="language-bash">brew install deno</code>
+</pre>
+          <figure>
+            <img data-src="../images/blog/deno-js/deno-install.gif" alt="Installing Deno using Homebrew">
+            <figcaption>Installing Deno using Homebrew</figcaption>
+          </figure>
+          <p>For more information, you can refer to the <a href="https://deno.land/#installation" target="_blank" rel="noopener">Deno Installation</a>.</p>
+          <hr>
+
+          <h2>Is there a Deno Versioning Manager?</h2>
+          <p>As of now, there’s no official documentation around the version manager. While searching further on this, I came across an <a href="https://github.com/denoland/deno/issues/5214" target="_blank" rel="noopener">open issue</a> on the Deno repo for the same.</p>
+          <p>In the above, a couple of developers have suggested version managers like <a href="https://github.com/asdf-community/asdf-deno" target="_blank" rel="noopener">asdf-deno</a> and <a href="https://github.com/axetroy/dvm" target="_blank" rel="noopener">DVM</a>.</p>
+
+          <hr>
+
+          <h2>Hello World in Deno Land</h2>
+          <p>Let’s take a quick look at a simple example that will highlight some critical features of Deno. You can type the commands directly in the REPL(Read-Execute-Print-Loop) mode, or we can write the code in the <span class="ic">.ts</span> or a <span class="ic">.js</span> file.</p>
+          <p>Type <span class="ic">deno</span> in the terminal, which will enable the Deno REPL mode.</p>
+
+          <figure>
+            <img data-src="../images/blog/deno-js/repl-mode.gif" alt="Deno.js REPL Mode">
+            <figcaption>We are running a Deno code in <strong>REPL mode</strong>.</figcaption>
+          </figure>
+
+          <p>We can run any JavaScript or TypeScript code (no need of a compiler for TypeScript as Deno natively supports TypeScript).</p>
+          <p>In the above example, I’ve done some simple math operations like adding two integers and assigning an integer to a <span class="ic">constant</span>, which is further used to add to another number.</p>
+          <p>Lastly, you can exit the REPL mode by typing <span class="ic">Deno.exit()</span> or <span class="ic">close()</span>.</p>
+          <p>REPL mode is not that useful when running large programs or code snippets, and this is where a file comes handy. We can write our code in a <span class="ic">.ts</span> or <span class="ic">.js</span> file and execute it using Deno. Let’s create a simple <span class="ic">HelloWorld.ts</span> file which will output a simple string.</p>
+<pre>
+<code class="language-bash">touch HelloWorld.ts //create a file</code>
+</pre>
+<p>Add some code to it. Just a simple <span class="ic">console</span> statement for now.</p>
+<pre>
+<code class="language-javascript">console.log('Hello World');</code>
+</pre>
+          <div class="note">
+            <p><strong>Note</strong>: Writing vanilla JavaScript in the TypeScript file is absolutely fine as mentioned on TypeScript’s website: <i>All valid JavaScript code is also TypeScript code</i>.</p>
+          </div>
+          <p>And now, let’s run the above file by typing the following command in the terminal.</p>
+<pre>
+<code class="language-bash">deno run filepath.ts //outputs Hello World</code>
+</pre>
+          <figure>
+            <img data-src="../images/blog/deno-js/runtime.gif" alt="Deno.js Runtime">
+            <figcaption>We are running a <strong>.ts</strong> file using Deno runtime.</figcaption>
+          </figure>
+
+          <p>Deno also allows you to run the remote files directly in the terminal like:</p>
+<pre>
+<code class="language-bash">deno run https://deno.land/std/examples/welcome.ts</code>
+</pre>
+          <figure>
+            <img data-src="../images/blog/deno-js/runtime2.gif" alt="Deno.js Runtime 2">
+            <figcaption>We are running a <strong>.ts</strong> file using Deno runtime.</figcaption>
+          </figure>
+
+          <p>The above file is one of the examples available in Deno’s Standard Library. You can find more examples at <a href="https://deno.land/std/examples" target="_blank" rel="noopener">https://deno.land/std/examples</a>.</p>
+
+          <hr>
+
+          <h2>Our first Deno app</h2>
+          <p>Now that we have some fair idea on how to execute code using REPL or a <span class="ic">.ts</span> file, we will now move to a little more complex program where we will explore additional features of Deno.</p>
+          <p>In the below app, we are merely fetching some <a href="https://api.jsonbin.io/b/5ec136d747a2266b1479ecc7" target="_blank" rel="noopener">data from the third-party website</a> and printing it in the terminal.</p>
+          <p>We will create a new file for the program, say <span class="ic">Request.ts</span>.</p>
+<pre>
+<code class="language-bash">touch Request.ts</code>
+</pre>
+          <p>Add the below code to <span class="ic">Request.ts</span></p>
+<pre>
+<code class="language-javascript">//fetch the data from JSONBin.io - JSON Storage website (public record)
+const getRecords = await fetch('https://api.jsonbin.io/b/5ec136d747a2266b1479ecc7');
+
+//proceed once the promise is resolved from the previous statement, fetch the response body and parse it to json
+const getData = await getRecords.json();
+
+//prints the retrieved data
+console.log(getData); //[ 1,2,3,4,5 ]</code>
+</pre>
+          <p>In the above code, we request the JSON data from JSONBin.io (a free JSON hosting website) and later we parse the response using <span class="ic">.json()</span> and then we print the response using <span class="ic">console.log()</span> statement.</p>
+          <p>Now, we will run the above code using the following command.</p>
+
+<pre>
+<code class="language-bash">deno run Request.ts</code>
+</pre>
+          <p>Fair. When we run the file, we expect the file to output the contents we just retrieved, but instead, it errors out.</p>
+
+          <figure>
+            <img data-src="../images/blog/deno-js/fetch-api-sample.png" alt="Deno.js Fetch API Example">
+            <figcaption>Fetching data from a third-party website using the <strong>fetch API</strong> with Deno</figcaption>
+          </figure>
+
+          <p>😖 <strong>Why is it erroring out?</strong> As we discussed earlier, unlike Node.js, Deno provides a secure runtime for JavaScript, and hence, since your script file is trying to access an external resource, you need to grant the permission to the script to do so. Try rerunning the following command, but this time, we will pass the necessary permission for the script to fetch the data.</p>
+
+<pre>
+<code class="language-bash">deno run --allow-net Request.ts
+//script will now output the contents of the file like
+//[ 1, 2, 3, 4, 5 ]</code>
+</pre>
+          <figure>
+            <img data-src="../images/blog/deno-js/third-party.gif" alt="Fetch Data from third-party">
+            <figcaption>Run a <strong>.ts file</strong> to fetch the <strong>data</strong> from a <strong>third-party</strong> website</figcaption>
+          </figure>
+          <p>These are some key takeaways from the above app we just created.</p>
+          <ol>
+            <li>We didn’t install any third-party modules like <span class="ic">axios</span>, <span class="ic"><s>request</s></span> or <span class="ic">node-fetch</span> to request the data as Deno provides us with native <span class="ic">fetch</span> API support.</li>
+            <li>No need to wrap the request with an <strong>async</strong> function. We can use await directly as it’s available as a <strong>top-level</strong> function.</li>
+            <li>We cannot run the program unless the third-party website is granted explicit permission. Hence, we need to pass <span class="ic">--allow-net</span> flag explicitly.</li>
+          </ol>
+
+          <hr>
+
+          <h2>Final thoughts</h2>
+          <p>It’s been a couple of days since I started exploring Deno, and I must say, it’s too early to use it in production apps. In the near future, security will be a massive concern for the developers as we’ve already seen <a href="https://www.google.com/search?q=mailcious+npm+package" target="_blank" rel="noopener">malicious packages</a> sneaking in on the NPM registry. There’s also a lack of third-party support, modules that further makes the development difficult as you need to write a lot of modules by yourself instead of focusing on the core functionality of your app.</p>
+          <p>Deno is not going to replace Node.js any time soon, but in the coming years, you might see Deno community growing, and you’ll see a lot of third-party support like frameworks, modules that will extend the core functionality of the system.</p>
+
+          <hr>
+
+          <h2>Relevant Resources</h2>
+          <p>I’m sharing a few resources which will help you get started with Deno assuming you already know Node.js.</p>
+          <ul>
+            <li><a href="https://github.com/denoland/deno" rel="noopener" target="_blank">Deno Repository</a></li>
+            <li><a href=https://doc.deno.land/" rel="noopener" target="_blank">Deno Documentation</a></li>
+            <li><a href="https://deno.land/std/examples/" rel="noopener" target="_blank">Deno Examples</a></li>
+            <li><a href="https://deno.land/manual" rel="noopener" target="_blank">Deno Manual</a></li>
+            <li><a href="https://deno.land/std" rel="noopener" target="_blank">Deno Standard Library</a></li>
+            <li><a href="https://deno.land/x" rel="noopener" target="_blank">Deno — Third-Party Modules (more or less like NPM library)</a></li>
+            <li><a href="https://v8.dev/features/top-level-await" rel="noopener" target="_blank">Top Level <span class="ic">fetch</span></a></li>
+            <li><a href="https://stevedonovan.github.io/rust-gentle-intro/readme.html" rel="noopener" target="_blank">Rust Introduction</a></li>
+            <li><a href="https://www.freecodecamp.org/news/learn-typescript-in-5-minutes-13eda868daeb/" rel="noopener" target="_blank">TypeScript for beginners</a></li>
+          </ul>
+      </article>
+    </main>
+
+    <div id="menu" class="hide menu">
+      <nav>
+        <ul>
+          <li><a href="/">#</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/blog" class="active-link">blog</a></li>
+          <li><a href="/achievements">Achievements</a></li>
+          <li><a href="/resources">Resources</a></li>
+        </ul>
+        <div class="switch-mode">
+          <button data-theme-enabled="dark" id="switch-theme"></button>
+        </div>
+      </nav>
+    </div>
+
+    <script src="../javascripts/prism-autoloader.min.js"></script>
+    <script src="../javascripts/prism.min.js"></script>
+    <script src="../javascripts/app.js"></script>
+  </body>

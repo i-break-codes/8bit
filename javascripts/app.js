@@ -5,6 +5,22 @@ var App = function() {
     toggleMenu();
     toggleTabs();
     toggleTheme();
+    lazyLoadImages();
+  }
+
+  function lazyLoadImages() {
+    const io = new IntersectionObserver((entries) =>
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let image = entry.target;
+              image.src = image.dataset.src;
+
+          io.unobserve(image);
+        }
+      })
+    );
+
+    document.querySelectorAll("img[data-src]").forEach((element) => io.observe(element));
   }
 
   function toggleTheme() {

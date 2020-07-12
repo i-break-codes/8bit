@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Detailed documents of the Product features I've worked upon or ideas to share of different problems I've worked upon in the past.">
+    <title>blog | 8bit.codes</title>
+    <link rel="icon" type="image/png" href="../images/favico.png" />
+    <link rel="stylesheet" href="../stylesheets/app.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166017740-2"></script>
+    <script>
+      if(location.host === '8bit.codes') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-166017740-2');
+      }
+    </script>
+    <script src="../javascripts/initializer.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="row">
+        <div class="logo" data-text="8IT">
+          <a href="/">BIT</a>
+        </div>
+        <a href="/resume" class="hire-me-btn">Résumé</a>
+        <div class="hamburger-btn" id="hamburger-btn">
+          <a class="js-toggle-menu" href="#">
+            <span class="hamburger-line hamburger-line-top"></span>
+            <span class="hamburger-line hamburger-line-middle"></span>
+            <span class="hamburger-line hamburger-line-bottom"></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="intro">
+        <h1>Blog</h1>
+        <p>I like to build products and features which are simple yet compelling to the users. I deeply focus on the UX, User Engagement & the Problem Statement.</p>
+        <p>In this blog, I'll usually cover some tech-related topics such as tutorials for developing websites, how to use a specific tech, and so on. Moreover, I will be sharing some of my experiences with the projects I've worked upon earlier.</p>
+      </section>
+
+      <section class="blog-list">
+        <ul>
+          <li>
+            <h3><a href="1">Getting Started with Deno.js</a></h3>
+            <p><span>About</span>: An article about on how to get up and running with Deno.js. From setting up the environment to consuming data from an API endpoint.</p>
+            <ul>
+              <li><span>#</span>tutorial</li>
+              <li><span>#</span>javascript</li>
+              <li><span>#</span>deno.js</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <div id="menu" class="hide menu">
+      <nav>
+        <ul>
+          <li><a href="/">#</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/blog" class="active-link">blog</a></li>
+          <li><a href="/achievements">Achievements</a></li>
+          <li><a href="/resources">Resources</a></li>
+        </ul>
+        <div class="switch-mode">
+          <button data-theme-enabled="dark" id="switch-theme"></button>
+        </div>
+      </nav>
+    </div>
+
+    <script src="../javascripts/app.js"></script>
+  </body>

@@ -3,6 +3,7 @@
 :root {
   --brand-color: #50e3c2;
   --bg-color: #0d0d0d;
+  --code-bg-color: #111;
   --primary-color: #fff;
   --text-color: #aaa;
   --primary-border-color: #212121;
@@ -100,7 +101,7 @@ header {
 }
 
 p {
-  line-height: 21px;
+  line-height: 23px;
   color: var(--text-color);
   margin-bottom: 20px;
 }
@@ -969,6 +970,138 @@ hr {
 
 .switch-mode button[data-theme-enabled=dark] {
   background-image: url(../images/light.svg);
+}
+
+.blog-list {
+  margin-top: 80px;
+}
+
+.blog-list h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.blog-list > ul > li {
+  border-left: 2px solid var(--brand-color);
+  padding-left: 20px;
+}
+
+.blog-list li li {
+  display: inline-block;
+}
+
+.blog-list ul ul {
+  color: var(--text-color);
+}
+
+.blog-list li li span {
+  color: var(--brand-color);
+}
+
+.blog-list p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.blog-list a {
+  border-bottom: 1px dashed var(--brand-color);
+  transition: color 500ms ease-in;
+}
+
+.blog-list a:hover {
+  color: var(--brand-color);
+}
+
+article {
+  max-width: 800px;
+  margin: auto;
+}
+
+article h2,
+article h4 {
+  margin-bottom: 20px;
+}
+
+article img {
+  width: 100%;
+  display: block;
+  border: 5px solid var(--primary-border-color);
+  border-radius: 3px;
+}
+
+article figcaption {
+  text-align: center;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+
+article blockquote {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  width: 75%;
+  margin: auto;
+  line-height: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+article hr {
+  margin-top: 40px;
+}
+
+article ul li,
+article ol li {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  line-height: 23px;
+  color: var(--text-color);
+}
+
+article ol li {
+  list-style-type: decimal;
+}
+
+article pre[class*="language-"],
+article code[class*="language-"] {
+  background: var(--code-bg-color);
+  border-radius: 3px;
+  white-space: pre-wrap;
+}
+
+article pre[class*="language-"] {
+  overflow: hidden;
+  border: 1px solid var(--primary-border-color);
+  margin-bottom: 20px;
+}
+
+article li a,
+article p a {
+  transition: all 250ms ease-in;
+  border-bottom: 1px dashed var(--primary-color);
+}
+
+article li a:hover,
+article p a:hover {
+  color: var(--brand-color);
+  border-bottom-color: var(--brand-color);
+}
+
+article .ic {
+  background-color: var(--code-bg-color);
+  padding: 3px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--primary-border-color);
+  color: var(--brand-color);
+}
+
+article .note {
+  border-left: 3px solid var(--primary-color);
+  padding-left: 10px;
 }
 
 @media (max-width: 768px) {
