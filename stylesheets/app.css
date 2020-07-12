@@ -12,6 +12,7 @@
   --read-more-start: rgba(13,13,13,.3);
   --read-more-end: rgba(13,13,13,1);
   --white-05: rgba(255, 255, 255, .05);
+  --error-color: #ff4757;
 }
 
 ::selection {
@@ -95,9 +96,10 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  padding-bottom: 0;
+  padding-bottom: 40px;
   background-color: var(--bg-color);
   z-index: 1;
+  transition: padding 250ms ease;
 }
 
 p {
@@ -151,20 +153,45 @@ nav a:hover:not(.disabled-link):after {
 
 }
 
+.internet-connection-issue {
+  background-color: var(--error-color);
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+}
+
+.internet-connection-issue p {
+  color: var(--primary-color);
+  margin-bottom: 0;
+}
+
+.header-min {
+  padding: 20px;
+}
+
+.header-min .hamburger-btn {
+  top: 26px;
+}
+
+.header-min .logo {
+  padding-bottom: 0;
+}
+
 .hamburger-btn {
   height: 22px;
   width: 26px;
-  position: absolute;
-  right: 20px;
-  cursor: pointer;
-  top: 66px;
+  float: right;
+  margin-top: 7px;
+  margin-left: 20px;
 }
 
 .logo {
   font-size: 30px;
   position: relative;
   text-transform: uppercase;
-  padding-bottom: 40px;
   position: relative;
   float: left;
   z-index: 100;
@@ -716,7 +743,6 @@ hr {
   padding: 5px 10px;
   font-size: 12px;
   float: right;
-  margin-right: 60px;
   margin-top: 2px;
   background-color: var(--brand-color);
   border: 1px solid var(--brand-color);

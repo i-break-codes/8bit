@@ -6,6 +6,36 @@ var App = function() {
     toggleTabs();
     toggleTheme();
     lazyLoadImages();
+    resizeHeaderOnScroll();
+    checkConnection();
+  }
+
+  function checkConnection() {
+    //* xhr is recommended and I know that online is different than for what am trying to use this but yea, ignore for now.
+    let template = `
+      <div class="internet-connection-issue">
+        <p>There seems to be some problem with your Internet Connection. Website entering into <strong>Offline Mode</strong>.</p>
+      </div>
+    `;
+
+    window.addEventListener('offline', ()=> {
+      document.body.insertAdjacentHTML('beforeEnd', template);
+    });
+
+    window.addEventListener('online', ()=> {
+      document.querySelector('.internet-connection-issue').remove();
+    });
+  }
+
+  function resizeHeaderOnScroll() {
+    window.addEventListener('scroll', () => {
+      console.log(window.scrollY);
+      if(window.scrollY > 100) {
+        document.getElementsByTagName('header')[0].classList.add('header-min');
+      } else {
+        document.getElementsByTagName('header')[0].classList.remove('header-min');
+      }
+    });
   }
 
   function lazyLoadImages() {
@@ -48,9 +78,6 @@ var App = function() {
         navigator.serviceWorker
           .register('/cache-worker.js', {
             scope: '/'
-          })
-          .then(reg => {
-            console.log('Service worker registered');
           })
           .catch(err => console.error(`Error in service worker: ${err}`));
       });

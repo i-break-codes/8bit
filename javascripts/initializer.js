@@ -25,6 +25,7 @@ var Initializer = function() {
             --read-more-end: rgba(238,238,238,1);
             --white-05: rgba(0, 0, 0, .05);
             --code-bg-color: #f5f5f5;
+            --error-color: #ff4757;
           }
         `
       ));
