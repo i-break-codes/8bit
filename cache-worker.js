@@ -1,4 +1,4 @@
-const cacheVer = '1.0';
+const cacheVer = '1.1';
 const cacheAssets = [
   '/' ,
   '/projects',
@@ -10,7 +10,7 @@ const cacheAssets = [
   '/javascripts/app.js',
   '/images/light.svg',
   '/images/moon.svg',
-  '/blog',
+  '/blog/',
   '/blog/1'
 ];
 
@@ -26,8 +26,6 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('activate', e => {
-  console.log('sw activated');
-
   e.waitUntil(
     caches
       .keys()
@@ -45,7 +43,6 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   //add dynamic caching later here instead in the install
-
   e.respondWith(
     caches.match(e.request).then(res => {
       return res || fetch(e.request);
