@@ -8,6 +8,15 @@ var App = function() {
     lazyLoadImages();
     resizeHeaderOnScroll();
     checkConnection();
+    appVersion();
+  }
+
+  function appVersion() {
+    let template = `
+      <span class="app-version">release v1.0</span>
+    `;
+
+    document.body.insertAdjacentHTML('beforeEnd', template);
   }
 
   function checkConnection() {

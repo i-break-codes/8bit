@@ -1,4 +1,4 @@
-const cacheVer = '0.3';
+const cacheVer = '0.4';
 const cacheAssets = [
   '/' ,
   '/projects',
@@ -9,8 +9,10 @@ const cacheAssets = [
   '/stylesheets/fonts.css',
   '/javascripts/app.js',
   '/images/light.svg',
-  '/images/moon.svg'
-]
+  '/images/moon.svg',
+  '/blog',
+  '/blog/1'
+];
 
 self.addEventListener('install', e => {
   e.waitUntil(

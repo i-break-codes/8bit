@@ -153,6 +153,14 @@ nav a:hover:not(.disabled-link):after {
 
 }
 
+.app-version {
+  font-size: 12px;
+  position: absolute;
+  bottom: 60px;
+  right: -20px;
+  transform: rotate(-90deg);
+}
+
 .internet-connection-issue {
   background-color: var(--error-color);
   text-align: center;
