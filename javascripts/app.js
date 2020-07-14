@@ -38,12 +38,10 @@ var App = function() {
 
   function resizeHeaderOnScroll() {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY);
-      if(window.scrollY > 100) {
-        document.getElementsByTagName('header')[0].classList.add('header-min');
-      } else {
-        document.getElementsByTagName('header')[0].classList.remove('header-min');
-      }
+      let header = document.getElementsByTagName('header')[0];
+      (window.scrollY > 100)
+        ? header.classList.add('header-min')
+        : header.classList.remove('header-min');
     });
   }
 
