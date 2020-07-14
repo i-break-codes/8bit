@@ -13,7 +13,7 @@ var App = function() {
 
   function appVersion() {
     let template = `
-      <span class="app-version">release v1.2</span>
+      <span class="app-version">release v1.3</span>
     `;
 
     document.body.insertAdjacentHTML('beforeEnd', template);
