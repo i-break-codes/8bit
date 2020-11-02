@@ -607,11 +607,13 @@ hr {
   text-align: center;
   text-transform: uppercase;
   padding: 10px 20px;
-  transition: border-color 300ms ease-in;
+  transition: all 300ms ease-in;
+  box-shadow: 4px 4px 0 var(--brand-color);
 }
 
 .view-project-cta:hover {
-  border-color: transparent;
+  color: var(--primary-color) !important;
+  box-shadow: 0 0 0 var(--brand-color);
 }
 
 .project-ico {
@@ -649,6 +651,8 @@ hr {
   position: relative;
   max-height: 275px;
   overflow: hidden;
+  padding-right: 5px;
+  padding-bottom: 5px;
 }
 
 .project-info.expanded > div {
@@ -679,14 +683,16 @@ hr {
   padding: 10px 20px;
   text-transform: uppercase;
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  transition: border-color 300ms ease-in;
+  transition: all 300ms ease-in;
+  box-shadow: 4px 4px 0 var(--primary-color);
 }
 
 .read-more a:hover {
-  border-color: transparent;
+  color: var(--primary-color) !important;
+  box-shadow: 0 0 0 var(--brand-color);
 }
 
 .achievement-list {
@@ -745,21 +751,21 @@ hr {
 }
 
 .hire-me-btn {
-  color: var(--bg-color) !important;
+  color: var(--brand-color) !important;
   font-weight: 500;
-  border-radius: 3px;
   padding: 5px 10px;
+  box-shadow: 4px 4px 0 var(--brand-color);
   font-size: 12px;
   float: right;
   margin-top: 2px;
-  background-color: var(--brand-color);
   border: 1px solid var(--brand-color);
   transition: all 200ms ease-in;
+  margin-right: 20px;
 }
 
 .hire-me-btn:hover {
   color: var(--primary-color) !important;
-  background-color: transparent;
+  box-shadow: 0 0 0 var(--brand-color);
 }
 
 .resume {
