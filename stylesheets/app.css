@@ -730,10 +730,6 @@ hr {
   border-bottom: 0;
 }
 
-.socials a:hover img {
-  filter: grayscale(0%);
-}
-
 .socials li {
   display: inline-block;
   margin-right: 20px;
@@ -748,6 +744,10 @@ hr {
   width: 22px;
   filter: grayscale(100%);
   transition: filter 300ms ease-in;
+}
+
+.socials a:hover img {
+  filter: grayscale(0%);
 }
 
 .hire-me-btn {
