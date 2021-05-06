@@ -1,4 +1,4 @@
-@import 'fonts.css';
+@import "fonts.css";
 
 :root {
   --brand-color: #50e3c2;
@@ -9,9 +9,9 @@
   --primary-border-color: #212121;
   --not-maintained: #fcf264;
   --special: #56a7ee;
-  --read-more-start: rgba(13,13,13,.3);
-  --read-more-end: rgba(13,13,13,1);
-  --white-05: rgba(255, 255, 255, .05);
+  --read-more-start: rgba(13, 13, 13, 0.3);
+  --read-more-end: rgba(13, 13, 13, 1);
+  --white-05: rgba(255, 255, 255, 0.05);
   --error-color: #ff4757;
 }
 
@@ -30,7 +30,7 @@
 body {
   background-color: var(--bg-color);
   color: var(--primary-color);
-  font: 300 14px 'League Mono';
+  font: 300 14px "League Mono", Menlo, Courier;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -71,7 +71,7 @@ hr {
 
 .row:after,
 .clear:after {
-  content: '';
+  content: "";
   clear: both;
   display: table;
 }
@@ -129,7 +129,7 @@ nav li {
 
 nav a:before,
 nav a:after {
-  content: '[';
+  content: "[";
   color: transparent;
   transition: color 500ms ease-in;
   position: relative;
@@ -137,7 +137,7 @@ nav a:after {
 }
 
 nav a:after {
-  content: ']';
+  content: "]";
 }
 
 nav a.disabled-link {
@@ -150,7 +150,6 @@ nav a.active-link:after,
 nav a:hover:not(.disabled-link):before,
 nav a:hover:not(.disabled-link):after {
   color: var(--brand-color);
-
 }
 
 .app-version {
@@ -446,17 +445,17 @@ main h2 {
 }
 
 .resource-band ul li:after {
-  content: '/';
+  content: "/";
   position: absolute;
   right: -20px;
 }
 
 .resource-band ul li:last-of-type:after {
-  content: '';
+  content: "";
 }
 
 .resource-band li a {
-  transition: color 500ms ease-in ;
+  transition: color 500ms ease-in;
   font-weight: 400;
 }
 
@@ -632,7 +631,7 @@ hr {
 }
 
 .project-box h3 {
-  text-transform: uppercase ;
+  text-transform: uppercase;
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -675,7 +674,11 @@ hr {
   left: 0;
   bottom: 0;
   height: 70px;
-  background: linear-gradient(to bottom, var(--read-more-start) 0%, var(--read-more-end) 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--read-more-start) 0%,
+    var(--read-more-end) 100%
+  );
 }
 
 .read-more a {
@@ -812,7 +815,7 @@ hr {
 }
 
 .workexp-block h4:before {
-  content: '';
+  content: "";
   position: absolute;
   height: 10px;
   width: 10px;
@@ -865,7 +868,7 @@ hr {
 
 .cv-intro ul ul {
   float: left;
-  border-left: 1px solid var(--text-color)
+  border-left: 1px solid var(--text-color);
 }
 
 .cv-intro li li {
@@ -887,7 +890,7 @@ hr {
   font-weight: 300;
   text-transform: uppercase;
   padding: 20px 0;
-  border-bottom: 1px solid var(--text-color)
+  border-bottom: 1px solid var(--text-color);
 }
 
 .cv-mainframe > div {
@@ -956,8 +959,8 @@ hr {
 }
 
 .stack-block ul {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
   flex-wrap: wrap;
@@ -1004,11 +1007,11 @@ hr {
   background-size: 28px;
 }
 
-.switch-mode button[data-theme-enabled=light] {
+.switch-mode button[data-theme-enabled="light"] {
   background-image: url(../images/moon.svg);
 }
 
-.switch-mode button[data-theme-enabled=dark] {
+.switch-mode button[data-theme-enabled="dark"] {
   background-image: url(../images/light.svg);
 }
 
