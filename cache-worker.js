@@ -1,4 +1,4 @@
-const cacheVer = '1.4';
+const cacheVer = '1.5';
 const cacheAssets = [
   '/' ,
   '/projects',
